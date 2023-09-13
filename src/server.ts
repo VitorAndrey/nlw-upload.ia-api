@@ -1,10 +1,14 @@
 import { fastify } from "fastify";
 
+import { uploadVideoRoute } from "./routes/upload-video";
+import { getAllProptsRoute } from "./routes/get-all-prompts";
+import { createTranscriptionRoute } from "./routes/create-transcription";
+
 const app = fastify();
 
-app.get("/", () => {
-  return "Hello Wold";
-});
+app.register(getAllProptsRoute);
+app.register(uploadVideoRoute);
+app.register(createTranscriptionRoute);
 
 app
   .listen({
