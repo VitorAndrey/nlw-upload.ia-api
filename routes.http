@@ -3,7 +3,7 @@ GET http://localhost:3333/prompts
 
 ###
 
-# @name upload
+# @name upload-file
 POST http://localhost:3333/videos
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
@@ -16,10 +16,22 @@ Content-Type: audio/mpeg
 
 ###
 
-# @name upload
-POST http://localhost:3333/videos/c029d817-8d2a-4c88-96e3-704f2eeb6ea9/transcription
+# @name generate-transcription
+POST http://localhost:3333/videos/6b2368ff-1f35-4664-9d7f-6fca082d9112/transcription
 Content-Type: application/json
 
 {
     "prompt": "clean architecture, add"
+}
+
+###
+
+# @name generate-ai-completion
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+    "videoId": "6b2368ff-1f35-4664-9d7f-6fca082d9112",
+    "temperature": 0.9,
+    "template": "Conte uma nova piada que continue a história do pintinho a seguir: '''{transcription}'''"
 }
