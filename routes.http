@@ -33,5 +33,5 @@ Content-Type: application/json
 {
     "videoId": "6b2368ff-1f35-4664-9d7f-6fca082d9112",
     "temperature": 0.9,
-    "template": "Conte uma nova piada que continue a história do pintinho a seguir: '''{transcription}'''"
+    "prompt": "Conte uma nova piada que continue a história do pintinho a seguir: '''{transcription}'''"
 }
